@@ -72,3 +72,9 @@ git push origin new-branch-name
 ```
 
 Submit a pull request
+
+## Inspiration
+
+* [nwHacks 2019](https://www.nwhacks.io/)
+* [HackUVic 2018](http://18w.hackuvic.com/)
+* [HackathingUVic 2017](http://www.hackathinguvic.com/)
