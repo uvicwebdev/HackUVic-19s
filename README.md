@@ -1,6 +1,6 @@
 # HackUVic-19s
 
-The HackUVic Website - Spring 2018
+The HackUVic Website - Spring 2018; "What the World Needs Now"
 
 ## What Did We Use?
 
@@ -8,10 +8,6 @@ The HackUVic Website - Spring 2018
 * [Bootstrap](https://getbootstrap.com/)
 * [FontAwesome](https://fontawesome.com/)
 * [Github Pages](https://pages.github.com/)
-
-## Links
-
-* [Website]()
 
 ## Run this Locally!
 
@@ -23,55 +19,72 @@ The HackUVic Website - Spring 2018
 
 ### Obtain Local Copy
 
-Clone the repository to your local computer.
+Clone the repository to your local computer in the directory you're currently in.
 
 ```bash
-// Change into your working directory
-cd working/directory
-
-// Clone the repository
 git clone https://github.com/uvicwebdev/HackUVic-19s.git
-```
-
-Go into the folder
-
-```bash
 cd HackUVic-19s
 ```
 
 ### Contribute to the Repo
 
-Create a new branch
+#### Review and Approval Process
+
+For code quality and every member to be in the know, a review and approval process is in place:
+
+* Feature branches: (ie. design-add_clouds or sponsors-reformat_layout)
+* No merging directly into master unless absolutely needed.
+* PRs must have two (2) approvals before being merged.
+
+#### Creating a Branch and Making Changes
 
 ```bash
+// Creating a branch
 git checkout -b new-branch-name
-```
 
-Open files in a text editor
+// Make changes and see what files differ from master
+git status
 
-Open files in the browser
-
-Make changes
-
-Add changes
-
-```bash
+// Add modified files one at a time
+git add {$specific file names}
+// OR (Danger, danger! Do this sparingly) add ALL files at once
 git add .
 ```
 
-Commit changes
-
+Once small changes have been made, commit and push them.
 ```bash
 git commit -m "Description of Changes"
-```
-
-Push changes
-
-```bash
 git push origin new-branch-name
 ```
 
-Submit a pull request
+When all changes are made, create a PR and wait for the review/approval process.
+
+#### Merging Code
+
+```bash
+// After committing changes, go to master
+git checkout master
+
+// Update local master to references to master
+git fetch
+git reset --hard origin/master
+
+// Rebase your code with master
+git checkout your-branch-name
+git rebase origin/master
+
+// Push changes if you had to rewind your code on top of master
+git push origin new-branch-name
+
+// Merge into master
+git checkout master
+git merge --no-ff your-branch-name -m "Merge 'your-branch-name'"
+git push origin :your-branch-name
+
+// Optional: clean up your branches by deleting them
+git branch -d your-branch-name
+
+```
 
 ## Inspiration
 
