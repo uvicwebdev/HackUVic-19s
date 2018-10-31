@@ -8,6 +8,8 @@ The HackUVic Website - Spring 2018
 * [Bootstrap](https://getbootstrap.com/)
 * [FontAwesome](https://fontawesome.com/)
 * [Github Pages](https://pages.github.com/)
+* [Gulp](https://github.com/gulpjs/gulp)
+* [SASS](http://sass-lang.com/)
 
 ## Links
 
@@ -18,6 +20,7 @@ The HackUVic Website - Spring 2018
 ### Prerequisites
 
 * [git](https://git-scm.com/)
+* [NPM](https://www.npmjs.com/)
 * Text Editor
 * Terminal
 
@@ -41,17 +44,28 @@ cd HackUVic-19s
 
 ### Contribute to the Repo
 
-Create a new branch
+#### Getting Gulp Ready
+
+Scss files need to be converted to css first. To do that, we run gulp. (Note: css files
+will always be overwritten when running gulp.) To install all the dev dependencies for the first time:
+
+```bash
+npm install
+````
+
+To run gulp, go through an npm command. This command also automagically syncs any html/scss/js changes to the browser:
+
+```bash
+npm run build
+````
+
+
+#### Creating and Committing Branches
 
 ```bash
 git checkout -b new-branch-name
 ```
 
-Open files in a text editor
-
-Open files in the browser
-
-Make changes
 
 Add changes
 
@@ -78,3 +92,4 @@ Submit a pull request
 * [nwHacks 2019](https://www.nwhacks.io/)
 * [HackUVic 2018](http://18w.hackuvic.com/)
 * [HackathingUVic 2017](http://www.hackathinguvic.com/)
+* [Gulp For Beginners](https://css-tricks.com/gulp-for-beginners/)

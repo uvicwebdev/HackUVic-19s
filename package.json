@@ -1,0 +1,26 @@
+{
+  "name": "hackuvic-19s",
+  "version": "1.0.0",
+  "description": "The HackUVic Website - Spring 2018",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"We should probs get some tests.\" && exit 1",
+    "build": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uvicwebdev/HackUVic-19s.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uvicwebdev/HackUVic-19s/issues"
+  },
+  "homepage": "https://github.com/uvicwebdev/HackUVic-19s#readme"
+}
