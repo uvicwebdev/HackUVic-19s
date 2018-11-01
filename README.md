@@ -72,7 +72,7 @@ git add .
 Once small changes have been made, commit and push them.
 ```bash
 git commit -m "Description of Changes"
-git push origin new-branch-name_solving_issue
+git push origin your-branch-name
 ```
 
 When all changes are made, create a PR and wait for the review/approval process.
@@ -83,23 +83,21 @@ When all changes are made, create a PR and wait for the review/approval process.
 // After committing changes, go to master
 git checkout master
 
-// Update local master to references to master
-git fetch
+// Optional: done if someone has merged code between the creation of the branch and your changes, or 
+// you haven't been rebasing your branch. These commands updates local master to origin master.
+git fetchs
 git reset --hard origin/master
-
-// Rebase your code with master
 git checkout your-branch-name
-git rebase origin/master
+git rebase origin/master         // Takes your changes and puts them on top of any new changes
+git push origin your-branch-name // Update local branch if you've need needed to recieve changes
+git checkout master              // Back to master to continue the merge
 
-// Push changes if you had to rewind your code on top of master
-git push origin new-branch-name_solving_issue
-
-// Merge into master
-git checkout master
+// Merge your branch from master
 git merge --no-ff your-branch-name -m "Merge 'your-branch-name'"
-git push origin :your-branch-name
+git push origin master
 
-// Optional: clean up your branches by deleting them
+// Optional: clean up your branches by deleting them (on git, then locally)
+git push origin :your-branch-name // Double check master is OK before net step
 git branch -d your-branch-name
 ```
 
