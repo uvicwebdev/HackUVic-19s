@@ -93,7 +93,7 @@ git push origin your-branch-name // Update local branch if you've need needed to
 git checkout master              // Back to master to continue the merge
 
 // Merge your branch from master
-git merge --no-ff your-branch-name -m "Merge 'your-branch-name'"
+git merge your-branch-name -m "Merge 'your-branch-name'"
 git push origin master
 
 // Optional: clean up your branches by deleting them (on git, then locally)
