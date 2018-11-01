@@ -5,5 +5,5 @@
 # NPM
 node_modules/
 
-# IDE
+# IDE specific
 .idea
