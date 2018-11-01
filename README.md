@@ -85,7 +85,7 @@ git checkout master
 
 // Optional: done if someone has merged code between the creation of the branch and your changes, or 
 // you haven't been rebasing your branch. These commands updates local master to origin master.
-git fetchs
+git fetch
 git reset --hard origin/master
 git checkout your-branch-name
 git rebase origin/master         // Takes your changes and puts them on top of any new changes
