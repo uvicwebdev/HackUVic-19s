@@ -64,14 +64,21 @@ p {
 .header-content a i {
   font-size: 2rem; }
 
-.description-content p {
+.description-content p,
+.faq-content p {
   max-width: 600px;
   text-align: left; }
 
 .description-content,
 .sponsorship-content,
+.faq-content,
 .contact-content {
   padding: 5rem 0 0; }
+
+.faq-content h3 {
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left; }
 
 .contact-content p:last-of-type {
   max-width: 280px; }
