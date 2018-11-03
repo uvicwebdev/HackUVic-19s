@@ -80,27 +80,32 @@ When all changes are made, create a PR and wait for the review/approval process.
 #### Merging Code
 
 ```bash
-// After committing changes, go to master
-git checkout master
-
-// Update local master to references to master
+# update your origin/* pointers
 git fetch
-git reset --hard origin/master
-
-// Rebase your code with master
-git checkout your-branch-name
+ 
+# checkout the branch you’re merging in (assumes branch-name points to origin/branch-name)
+git checkout branch-name
+ 
+# rebase the whole branch onto master:
 git rebase origin/master
 
-// Push changes if you had to rewind your code on top of master
-git push origin new-branch-name_solving_issue
-
-// Merge into master
-git checkout master
-git merge --no-ff your-branch-name -m "Merge 'your-branch-name'"
-git push origin :your-branch-name
-
-// Optional: clean up your branches by deleting them
-git branch -d your-branch-name
+# update origin/branch name to the new rebased head
+git push --force-with-lease origin branch-name
+ 
+# point your master branch to latest origin/master
+git checkout master && git fetch && git reset --hard origin/master
+ 
+# merge in the branch and force a ‘merge commit’
+git merge --no-ff branch-name -m "Merge 'your-branch-name'"
+ 
+# push your changes; this will automagically resolve the Github PR
+git push origin master
+ 
+# if no issue with merge, you can now delete the branch locally
+git branch -d branch-name
+ 
+# put this deleted branch back into origin
+git push origin :branch-name
 ```
 
 ## Inspiration
