@@ -20,7 +20,6 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="./css/animations.css">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -44,6 +43,7 @@
     <meta name="twitter:description" content="Hackathon at UVic - Spring 2019">
     <meta name="twitter:image" content="https://hackuvic.com/favicon.ico">
   </head>
+  <!-- ------------------ Website Body ------------------ -->
   <body>
     <!-- Website Container -->
     <div class="home">
@@ -74,14 +74,21 @@
           <div class="row">
             <div class="col-12">
 
-              <!-- Nasa-HackUVic Logo -->
-              <figure class="img">
+              <!-- Nasa-HackUVic Logo
+                The order of the g path MUST be written as it is below. This is due to SVGs not being NICE and allowing
+                the use of the z-index property. SVGs calculate their z-index based on how the DOM renders the parts of
+                the SVGs. This is why the Swooshes and the HackUVic words and everything are split into multiple parts
+                and seem very disconnected when you're reading them straight on. I sold my soul for this knowledge.
+
+                TL;DR: DOM render order is the z-index for SVG elements; leave shit below as is.
+              -->
+              <figure>
                 <svg class="img-nasa" viewBox="0 0 265 258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <g class="bg">
-                    <path id="bg" d="M123.5,220 C62.8828362,220 13,170.115946 13,109.5 C13,48.4802382 62.1211254,-1 123.5,-1 C183.357149,-1 234,49.2763061 234,109.5 C234,170.118097 184.118731,220 123.5,220 Z"></path>
+                    <path d="M123.5,220 C62.8828362,220 13,170.115946 13,109.5 C13,48.4802382 62.1211254,-1 123.5,-1 C183.357149,-1 234,49.2763061 234,109.5 C234,170.118097 184.118731,220 123.5,220 Z"></path>
                   </g>
                   <!-- Stars -->
-                  <g class="stars" id="stars" transform="translate(42.000000, 8.000000)" fill="#FFF" fill-rule="nonzero">
+                  <g class="stars" transform="translate(42.000000, 8.000000)" fill="#FFF" fill-rule="nonzero">
                     <path d="M82.7857946,1.51681915 C82.7857946,2.0067828 82.3840046,2.40873292 81.8925258,2.40873292 C81.4038378,2.40873292 80.999257,2.0067828 80.999257,1.51681915 C80.999257,1.0310104 81.4038378,0.627669131 81.8925258,0.627669131 C82.3840046,0.627669131 82.7857946,1.0310104 82.7857946,1.51681915" id="Shape"></path>
                     <path d="M88.9814918,15.0035719 C88.9814918,15.6044196 88.4816776,16.0985011 87.881802,16.0985011 C87.2777216,16.0985011 86.7807169,15.6043825 86.7807169,15.0035719 C86.7807169,14.404106 87.2777495,13.9099411 87.881802,13.9099411 C88.4817148,13.9099411 88.9814918,14.4040689 88.9814918,15.0035719" id="Shape"></path>
                     <path d="M105.056814,37.0449806 C105.056814,37.6447896 104.561521,38.1399098 103.957124,38.1399098 C103.355816,38.1399098 102.857435,37.6447432 102.857435,37.0449806 C102.857435,36.4441328 103.319014,35.9486602 103.923448,35.9486602 C104.527529,35.9486602 105.056907,36.4441699 105.056907,37.0449806" id="Shape"></path>
@@ -147,8 +154,8 @@
                   </g>
 
                   <!-- Orbit -->
-                  <g transform="matrix(0.8, 0.8, -0.2, 0.433, 130, 107)">
-                    <path d="M 0,70 A 65,70 0 0,0 65,0 5,5 0 0,1 75,0 75,70 0 0,1 0,70Z" fill="#FFF">
+                  <g id="orbit" transform="matrix(0.8, 0.8, -0.2, 0.433, 130, 107)">
+                    <path d="M 0,70 A 65,70 0 0,0 65,0 5,5 0 0,1 75,0 75,70 0 0,1 0,70Z">
                       <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="1.4s" repeatCount="indefinite" />
                     </path>
                   </g>
@@ -165,7 +172,7 @@
                     </g>
                   </svg>
 
-                  <!-- HackUVic Words -->
+                  <!-- Hack -->
                   <g class="hackuvic" id="HACK">
                     <path d="M48.1570762,96.5035007 C47.4516091,97.219589 46.96874,97.7230897 46.7084688,98.0140027 C46.3180621,98.4503721 46.1228616,98.9370845 46.1228616,99.4741546 L46.1228616,118.70788 C46.1228616,119.24495 46.3180621,119.731662 46.7084688,120.168032 C46.96874,120.458945 47.4516091,120.962445 48.1570762,121.678534 L36.3832886,121.678534 C37.0887556,120.962445 37.5716248,120.458945 37.8318959,120.168032 C38.2223027,119.731662 38.4175032,119.24495 38.4175032,118.70788 L38.4175032,110.752569 L28.739573,110.752569 L28.739573,118.70788 C28.739573,119.24495 28.9244998,119.731662 29.2943588,120.168032 C29.5409315,120.458945 30.0340745,120.962445 30.7737876,121.678534 L19,121.678534 C19.7054671,120.962445 20.1883362,120.458945 20.4486074,120.168032 C20.8390142,119.731662 21.0342146,119.24495 21.0342146,118.70788 L21.0342146,99.4741546 C21.0342146,98.9370845 20.8390142,98.4503721 20.4486074,98.0140027 C20.1883362,97.7230897 19.7054671,97.219589 19,96.5035007 L30.7737876,96.5035007 C30.0340745,97.219589 29.5409315,97.7230897 29.2943588,98.0140027 C28.9244998,98.4503721 28.739573,98.9370845 28.739573,99.4741546 L28.739573,107.479815 L38.4175032,107.479815 L38.4175032,99.4741546 C38.4175032,98.9370845 38.2223027,98.4503721 37.8318959,98.0140027 C37.5716248,97.7230897 37.0887556,97.219589 36.3832886,96.5035007 L48.1570762,96.5035007 Z M51.4122388,120.168032 C51.9222259,119.731662 52.2792115,119.228167 52.4832064,118.65753 L58.7866158,99.2727543 C58.9090127,98.8699518 58.8682144,98.4671553 58.6642195,98.0643527 C58.5282229,97.7958177 57.9202974,97.2755337 56.8404429,96.5035007 L67.3543568,96.5035007 L74.5757384,118.65753 C74.7797333,119.228167 75.1265193,119.731662 75.616107,120.168032 C75.9424987,120.458945 76.5340808,120.962445 77.3908533,121.678534 L64.4991825,121.678534 C64.8182967,121.583321 65.1374108,121.380952 65.456525,121.071429 C65.9351962,120.607143 66.139191,120.215641 65.9351962,119.678571 C65.7991996,119.320525 65.3205284,117.841001 64.4991825,115.24 L57.3790584,115.24 L56.399888,118.65753 C56.2366921,119.1946 56.2468917,119.664529 56.430487,120.067332 C56.5528839,120.335867 56.8690744,120.872934 57.3790584,121.678534 L49.6680915,121.678534 C50.4908649,120.962445 51.0722473,120.458945 51.4122388,120.168032 Z M63.5418401,112.150021 L61.0417258,102.964286 L58.5416115,112.150021 L63.5418401,112.150021 Z M83.5331602,106.422464 C83.4540896,107.362336 83.4936243,108.318978 83.6517654,109.292417 C83.8099065,110.265857 84.0668819,111.205715 84.4226994,112.112021 C84.7785169,113.018327 85.2430494,113.882661 85.8163108,114.70505 C86.3895723,115.527438 87.0913129,116.240724 87.9215536,116.844927 C89.7401762,118.254736 91.6971429,118.917672 93.7925125,118.833755 C95.887882,118.749838 96.5232363,118.304887 98.5,117.130046 L98.5,121.5 C97.9026742,120.993552 97.9026742,120.922939 97.6772405,120.993552 C97.5009294,121.048779 97.2535593,121.09588 96.6983406,121.250558 C95.4332118,121.60301 94.1088,121.829583 92.7250654,121.930284 C91.3413308,122.030985 89.9675007,122.022593 88.6035337,121.905109 C87.2395668,121.787625 86.0238753,121.577835 84.9564229,121.275733 C82.4657007,120.537262 80.479083,119.404397 78.9965102,117.877104 C77.5139374,116.349811 76.4761521,114.654709 75.8831229,112.791747 C75.2900938,110.928785 75.1517225,109.015502 75.4680046,107.05184 C75.7842868,105.088177 76.5057948,103.292376 77.6325501,101.664382 C78.7593054,100.036389 80.2912743,98.6937338 82.2285027,97.6363772 C84.1657311,96.5790205 86.4785099,96.0335669 89.1669085,96 C89.7994729,96 90.4419115,96.041958 91.0942435,96.1258752 C91.7465755,96.2097924 92.3593631,96.3104915 92.9326246,96.4279756 C93.505886,96.5454596 94.0297206,96.662942 94.5041438,96.780426 C94.9785671,96.8979101 95.3541466,97.0070008 95.6308935,97.1077015 C96.1448521,97.2755359 97.5,97.5 97.5,97.5 C97.5,97.5 97.8333333,97.2354139 98.5,96.7062417 L98.5,103 C96.3302889,101.013078 94.7907777,99.7790546 93.8814664,99.2979293 C92.5174994,98.5762414 91.0942509,98.3412768 89.6116782,98.5930284 C88.1291054,98.84478 86.7849262,99.608415 85.5791004,100.883956 C84.3732745,102.159498 83.6913013,104.005648 83.5331602,106.422464 Z M114.286014,96.5035007 C113.530619,97.2139946 113.013577,97.7091036 112.734886,97.9888276 C112.316849,98.4084136 112.107834,98.9035176 112.107834,99.4741546 L112.107834,106 L118.5,98.316103 C118.720019,98.047568 118.742021,97.7874286 118.566005,97.535677 C118.448662,97.3678426 118.18464,97.0237838 117.77394,96.5035007 L129.5,96.5035007 C128.601886,96.8574593 127.935219,97.2015181 127.5,97.535677 C127.110967,97.8343747 126.751944,98.0236445 126.5,98.316103 L118.292065,108 L127.957346,119.966632 C128.177365,120.2016 128.213975,120.298599 128.5,120.5 C128.690683,120.634268 129.35735,121.027112 130.5,121.678534 L124.195036,121.678534 C123.168279,121.678534 122.103267,121.678534 121,121.678534 L114.286014,113 L112.107834,115.5 L112.107834,118.70788 C112.107834,119.24495 112.316849,119.731662 112.734886,120.168032 C113.013577,120.458945 113.530619,120.962445 114.286014,121.678534 L101.61297,121.678534 C102.368364,120.962445 102.885406,120.458945 103.164097,120.168032 C103.582134,119.731662 103.791149,119.24495 103.791149,118.70788 L103.791149,99.4741546 C103.791149,98.9035176 103.582134,98.4084136 103.164097,97.9888276 C102.885406,97.7091036 102.368364,97.2139946 101.61297,96.5035007 L114.286014,96.5035007 Z" id="path-1"></path>
                   </g>
@@ -196,10 +203,13 @@
             <div class="col-12">
               <!-- Description -->
               <p>
-                HackUVic is a hackathon hosted by the Uvic Web Design and Development Club at the University of Victoria. It's an event for developers, marketers, entrepreneurs, and designers of all skill levels to build their own project from scratch.
+                HackUVic is a hackathon hosted by the UVic Web Design and Development Club at the University of
+                Victoria. It's an event for developers, marketers, entrepreneurs, and designers of all skill levels
+                to build their own project from scratch.
               </p>
               <p>
-                The event is free and food will be provided. Prizes for winners. Recommended team size is 2 - 4, we will pair you up with other students attending the event if you can't find a team.
+                The event is free and food will be provided. Prizes for winners. Recommended team size is 2 - 4, we will
+                pair you up with other students attending the event if you can't find a team.
               </p>
             </div>
           </div>
@@ -235,15 +245,16 @@
               <h2>FAQ</h2>
             </div>
             <div class="col-12">
-              <h3>
+              <h3 class="faq-question">
                 How do I sign up?
               </h3>
               <p>
-                You'll be able to sign up on our website early 2019. Stay tuned to our facebook group to know when we open registration.
+                You'll be able to sign up on our website early 2019. Stay tuned to our facebook group to know when we
+                open registration.
               </p>
             </div>
             <div class="col-12">
-              <h3>
+              <h3 class="faq-question">
                 How much does it cost?
               </h3>
               <p>
@@ -252,7 +263,7 @@
               </p>
             </div>
             <div class="col-12">
-              <h3>
+              <h3 class="faq-question">
                 I'm not a programmer/coder can I still attend?
               </h3>
               <p>
@@ -261,7 +272,7 @@
               </p>
             </div>
             <div class="col-12">
-              <h3>
+              <h3 class="faq-question">
                 How big can my team be?
               </h3>
               <p>
@@ -269,7 +280,7 @@
               </p>
             </div>
             <div class="col-12">
-              <h3>
+              <h3 class="faq-question">
                 What if I don't have a team?
               </h3>
               <p>
@@ -277,7 +288,7 @@
               </p>
             </div>
             <div class="col-12">
-              <h3>
+              <h3 class="faq-question">
                 Can I work on my previous projects?
               </h3>
               <p>
@@ -285,11 +296,12 @@
               </p>
             </div>
             <div class="col-12">
-              <h3>
+              <h3 class="faq-question">
                 What should I bring?
               </h3>
               <p>
-                HackUVic is a 24h event, which means hackers should be prepared to stay overnight. We'll have a dedicated room for sleeping, so bring a pillow and a sleeping bag if you plan on staying the night. <br>
+                HackUVic is a 24h event, which means hackers should be prepared to stay overnight. We'll have a
+                dedicated room for sleeping, so bring a pillow and a sleeping bag if you plan on staying the night. <br>
                 Also bring anything you'll need to hack, electronic devices, power cords, pens, papers, ect.
               </p>
             </div>
@@ -320,6 +332,7 @@
           </div>
         </section>
       </main>
+
       <!-- Footer Content -->
       <section class="container footer-content">
         <footer class="d-flex justify-content-between">

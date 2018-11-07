@@ -4,6 +4,7 @@
 // -----------------------------------------------------------
 
 @import "./branding.scss";
+@import "./animations.scss";
 
 // -----------------------------------------------------------
 //                      Basic Page Needs
@@ -32,20 +33,6 @@ main {
   font-family: $main-font;
   min-height: 100vh;
   background: url(../images/stars.svg);
-}
-
-.flex {
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-}
-
-._justify-center {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
 }
 
 
@@ -116,10 +103,12 @@ p {
 }
 
 .faq-content {
-  h3 {
+  .faq-question {
+    font-size: 1.6rem;
     margin: 0 auto;
     max-width: 600px;
     text-align: left;
+    padding-top: 1em;
   }
 }
 
@@ -164,10 +153,10 @@ p {
 }
 
 .footer-content nav ul li a {
-  color: $md-btn-color;
+  color: $dk-btn-color;
   font-size: .8rem;
 }
 
 .footer-content nav ul li a:hover {
-  color: $lt-btn-color;
+  color: $md-btn-color;
 }

@@ -1,5 +1,154 @@
 /* Google Font */
 @import url(https://fonts.googleapis.com/css?family=Niramit);
+/* Google Font */
+@import url(https://fonts.googleapis.com/css?family=Niramit);
+@-webkit-keyframes DASH {
+  0% {
+    stroke-dashoffset: 800; }
+  70% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0; }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1; } }
+
+@-moz-keyframes DASH {
+  0% {
+    stroke-dashoffset: 800; }
+  70% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0; }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1; } }
+
+@-webkit-keyframes BLINK {
+  0% {
+    fill-opacity: 0; }
+  50% {
+    fill-opacity: 1; }
+  100% {
+    fill-opacity: 0; } }
+
+@-moz-keyframes BLINK {
+  0% {
+    fill-opacity: 0; }
+  50% {
+    fill-opacity: 1; }
+  100% {
+    fill-opacity: 0; } }
+
+@-webkit-keyframes FADEIN {
+  0% {
+    fill-opacity: 0; }
+  100% {
+    fill-opacity: 1; } }
+
+@-moz-keyframes FADEIN {
+  0% {
+    fill-opacity: 0; }
+  100% {
+    fill-opacity: 1; } }
+
+@keyframes ASTEROID {
+  0% {
+    opacity: 0;
+    fill: #75abea; }
+  100% {
+    opacity: 1;
+    fill: #FFFFFF; } }
+
+.img-nasa {
+  padding-top: 4rem;
+  padding-left: 2rem;
+  width: 100%;
+  height: 565px;
+  margin: 0 auto;
+  position: relative;
+  display: block; }
+
+.bg path {
+  fill: #1A5DAD;
+  stroke-width: .5;
+  stroke: #1A5DAD;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  fill-opacity: 0;
+  -moz-animation: DASH 1.5s ease-in-out 0.5s forwards;
+  -webkit-animation: DASH 1.5s ease-in-out 0.5s forwards;
+  animation: DASH 1.5s ease-in-out 0.5s forwards; }
+
+.hackuvic path {
+  fill-opacity: 0;
+  -moz-animation: FADEIN 1s linear 1s forwards;
+  -webkit-animation: FADEIN 1s linear 1s forwards;
+  animation: FADEIN 1s linear 1s forwards;
+  animation-delay: 2s; }
+
+#HACK {
+  fill: #FFFFFF; }
+
+#UVIC {
+  fill: #CCCCCC; }
+
+.stars path {
+  fill: #FFFFFF;
+  stroke-width: 0;
+  fill-opacity: 0;
+  -moz-animation: DASH 1.5s ease-in-out 1.3s forwards;
+  -webkit-animation: DASH 1.5s ease-in-out 1.3s forwards;
+  animation: DASH 1.5s ease-in-out 1.3s forwards;
+  animation-delay: 2.3s; }
+
+.stars path:nth-child(2n+2) {
+  fill-opacity: 0;
+  -moz-animation: BLINK 3s ease-in-out 2.5s infinite;
+  -webkit-animation: BLINK 3s ease-in-out 2.5s infinite;
+  animation: BLINK 3s ease-in-out 2.5s infinite; }
+
+.stars path:nth-child(3n+3) {
+  fill-opacity: 0;
+  -moz-animation: BLINK 2s ease-in-out 3s infinite;
+  -webkit-animation: BLINK 2s ease-in-out 3s infinite;
+  animation: BLINK 2s ease-in-out 3s infinite; }
+
+.stars path:nth-child(4n+4) {
+  fill-opacity: 0;
+  -moz-animation: BLINK 2s ease-in-out 4s infinite;
+  -webkit-animation: BLINK 2s ease-in-out 4s infinite;
+  animation: BLINK 2s ease-in-out 4s infinite; }
+
+.stars polyline {
+  fill: #FFFFFF;
+  fill-opacity: 0;
+  stroke-width: 0; }
+
+.burst:nth-child(odd) {
+  fill-opacity: 0;
+  -moz-animation: BLINK 2s ease-in-out 2s infinite;
+  -webkit-animation: BLINK 2s ease-in-out 2s infinite;
+  animation: BLINK 2s ease-in-out 2s infinite;
+  animation-delay: 2.5s; }
+
+.burst:nth-child(even) {
+  fill-opacity: 0;
+  -moz-animation: BLINK 2s ease-in-out 1.5s infinite;
+  -webkit-animation: BLINK 2s ease-in-out 1.5s infinite;
+  animation: BLINK 2s ease-in-out 1.5s infinite;
+  animation-delay: 2.5s; }
+
+.swoosh {
+  fill: #EE293D;
+  fill-opacity: 0;
+  -moz-animation: FADEIN 0.4s linear 0.4s forwards;
+  -webkit-animation: FADEIN 0.4s linear 0.4s forwards;
+  animation: FADEIN 0.4s linear 0.4s forwards;
+  animation-delay: 2.2s; }
+
+#orbit {
+  animation: ASTEROID 2s .3s ease-out both;
+  animation-delay: 2.7s; }
+
 body {
   height: 100%;
   width: 100%; }
@@ -21,18 +170,6 @@ main {
   min-height: 100vh;
   background: url(../images/stars.svg); }
 
-.flex {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex; }
-
-._justify-center {
-  justify-content: center;
-  align-content: center;
-  align-items: center; }
-
 .container {
   max-width: 960px !important; }
 
@@ -42,12 +179,12 @@ main {
 
 .btn-primary {
   color: #FFFFFF;
-  background-color: #172a53;
-  border-color: #172a53; }
+  background-color: #1A5DAD;
+  border-color: #1A5DAD; }
 
 .btn-primary:hover {
-  background-color: #122242;
-  border-color: #122242; }
+  background-color: #052c82;
+  border-color: #052c82; }
 
 p {
   margin: 1rem auto; }
@@ -75,10 +212,12 @@ p {
 .contact-content {
   padding: 5rem 0 0; }
 
-.faq-content h3 {
+.faq-content .faq-question {
+  font-size: 1.6rem;
   margin: 0 auto;
   max-width: 600px;
-  text-align: left; }
+  text-align: left;
+  padding-top: 1em; }
 
 .contact-content p:last-of-type {
   max-width: 280px; }
@@ -110,8 +249,8 @@ p {
   margin: 0 .5rem; }
 
 .footer-content nav ul li a {
-  color: #172a53;
+  color: #052c82;
   font-size: .8rem; }
 
 .footer-content nav ul li a:hover {
-  color: #005591; }
+  color: #1A5DAD; }
