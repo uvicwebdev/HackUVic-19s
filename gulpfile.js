@@ -10,7 +10,7 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 
 gulp.task('sass', function(){
-  return gulp.src('scss/**/*.scss') // Gets all files ending with .scss in app/scss
+  return gulp.src('scss/**/main.scss')
       .pipe(sass())
       .pipe(gulp.dest('css'))
       .pipe(browserSync.reload({
