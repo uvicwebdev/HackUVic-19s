@@ -10,6 +10,7 @@ The HackUVic Website - Spring 2018; "What the World Needs Now"
 * [Github Pages](https://pages.github.com/)
 * [Gulp](https://github.com/gulpjs/gulp)
 * [SASS](http://sass-lang.com/)
+* [Surge](https://surge.sh/)
 
 ## Run this Locally!
 
