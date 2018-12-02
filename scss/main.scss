@@ -162,3 +162,29 @@ p {
 .footer-content nav ul li a:hover {
   color: $md-btn-color;
 }
+
+
+// -----------------------------------------------------------
+//				        Media
+// -----------------------------------------------------------
+
+@media (max-width: 700px) {
+  p, .header-content a {
+    font-size: 1em;
+  }
+  .header-content a i {
+    font-size: 2rem;
+  }
+  .faq-content .faq-question {
+    font-size: 1.6rem;
+  }
+  .footer-content {
+    font-size: 1.2rem;
+  }
+  .footer-content a img {
+    max-height: .8rem;
+  }
+  .footer-content nav ul li a {
+    font-size: .8rem;
+  }
+}
